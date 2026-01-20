@@ -1,0 +1,26 @@
+[
+    {
+        "description": "Morning delivery route for city center",
+        "delivery_status": "Pending",
+
+        "vehicle_id": 1,
+        "driver_id": 1,
+
+        "origin_name": "Central Warehouse",
+        "origin_address": "123 Main St",
+        "origin_contact": "123456789",
+
+        "destination_name": "Downtown Hub",
+        "destination_address": "456 Downtown Rd",
+        "destination_contact": "987654321",
+
+        "delivery_date": "2025-12-01",
+        "delivery_start_time": "08:30:00",
+        "delivery_end_time": "12:00:00",
+
+        "kms_travelled": 35,
+        "expected_duration": "03:30:00",
+
+        "driver_notes": "High priority packages included."
+    }
+]
