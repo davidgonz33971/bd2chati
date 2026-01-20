@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Create Invoice — Mailly{% endblock %}
+{% block content %}
+<div class="card">
+  <h3>Create New Invoice</h3>
+  <form method="post" style="margin-top:16px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div style="margin-top:16px; display:flex; gap:8px;">
+      <button type="submit" class="btn btn-primary">Create Invoice</button>
+      <a class="btn" href="{% url 'invoice_list' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
