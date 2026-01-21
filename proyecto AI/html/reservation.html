@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reservation | Riveiro’s</title>
+
+    <link rel="stylesheet" href="../css/reservation.css" />
+    <script defer src="../js/reservation.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../assets/riveros.png" alt="Riveiro’s logo">
+            </a>
+            <div class="logo-text">
+                <h1>Riveiro’s Coffee</h1>
+
+            </div>
+        </div>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+
+        <li>
+            <a href="menu.html">Menu</a>
+            <ul class="submenu">
+                    <li><a href="bakery.html">Bakery</a></li>
+                    <li><a href="drinks.html">Drinks</a></li>
+                    <li><a href="quick-bites.html">Quick-bites</a></li>
+            </ul>
+        </li>
+
+        <li><a href="reservation.html" class="active">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    </div>
+</header>
+
+<main class="page">
+    <h2 class="page-title">Book your table  </h2>
+
+    <section class="layout">
+
+        <aside class="card info">
+            <h3>Information</h3>
+
+            <div class="info-row">
+                <span class="label">Opening Hours</span>
+                <span class="value">Mon–Sun: 12:00 – 23:30</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Phone</span>
+                <span class="value">+351 000 000 000</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Address</span>
+                <span class="value">Main Street 123, Viseu</span>
+            </div>
+
+            <p class="hint">
+                *For large groups (6 or more people), we recommend contacting us by phone.
+            </p>
+        </aside>
+
+        <section class="card form-card">
+            <h3>Reservation Details</h3>
+
+            <form id="reservationForm" novalidate>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="name">Full name *</label>
+                        <input id="name" type="text" placeholder="e.g. Marta Garcia" />
+                        <div class="error" id="err-name"></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="people">Guests *</label>
+                        <input id="people" type="number" min="1" max="10" value="2" />
+                        <div class="error" id="err-people"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="phone">Phone *</label>
+                        <input id="phone" type="tel" placeholder="+351 912 345 678" />
+                        <div class="error" id="err-phone"></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="name@email.com" />
+                        <div class="error" id="err-email"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="date">Date *</label>
+                        <input id="date" type="date" />
+                        <div class="error" id="err-date"></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="time">Time *</label>
+                        <select id="time"></select>
+                        <div class="error" id="err-time"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="zone">Seating Area</label>
+                        <select id="zone">
+                            <option value="Indoor">Indoor</option>
+                            <option value="Terrace">Terrace</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion">
+                            <option value="Normal">Regular</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Business">Business lunch</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="notes">Special requests</label>
+                    <textarea id="notes" placeholder="Allergies, high chair, quiet table..."></textarea>
+                </div>
+
+                <div class="notice" id="groupNotice" aria-live="polite"></div>
+
+                <div class="actions">
+                    <button class="btn" type="submit">Confirm Reservation</button>
+                </div>
+
+                <div class="success" id="successBox" aria-live="polite"></div>
+            </form>
+        </section>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <p id="datetime"></p>
+    <p>© 2025 Riveiro’s</p>
+</footer>
+
+</body>
+</html>

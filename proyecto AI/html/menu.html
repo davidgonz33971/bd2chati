@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratorio CSS (Box Model + Position + Flow)</title>
+
+  <style>
+    /* Toggle rápido: comenta/descomenta este reset */
+    /* * { margin: 0; padding: 0; border: 0; box-sizing: border-box; } */
+
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 16px; /* prueba 0 para quitar borde blanco */
+      line-height: 1.4;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 10 auto;
+    }
+
+    h1 { margin: 0 0 12px; }
+    h2 { margin: 18px 0 8px; }
+
+    .panel {
+      border: 2px dashed #999;
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    .note {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* =========================
+       1) BOX MODEL + BOX-SIZING
+       ========================= */
+    .box-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .box {
+      width: 260px;          /* juega con este width */
+      height: 120px;         /* y con este height */
+      padding: 16px;         /* padding */
+      border: 6px solid #222;/* border */
+      margin: 12px;          /* margin */
+      background: #dfa8a8;
+    }
+
+    /* Cambia entre content-box y border-box para ver la diferencia */
+    .contentBox { box-sizing: content-box; }
+    .borderBox  { box-sizing: border-box; }
+
+    /* =========================
+       2) INLINE vs BLOCK
+       ========================= */
+    .inline-demo span {
+      border: 2px solid #4b6;
+      padding: 6px;
+      margin: 110px; /* OJO: margin vertical en inline es "especial" */
+      background: #eafff1;
+      display: inline-block;
+      /* prueba: display: inline-block; */
+    }
+
+    .block-demo div {
+      border: 2px solid #48a;
+      padding: 8px;
+      margin: 10px 0;
+      background: #eef6ff;
+      display: inline;
+      /* prueba: display: inline; */
+    }
+
+    /* =========================
+       3) POSITION: relative/absolute
+       ========================= */
+    .pos-parent {
+      position: relative;     /* prueba quitar esto */
+      height: 160px;
+      border: 2px solid #c77;
+      background: #fff3f3;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .pos-abs {
+      position: absolute;
+      top: 20px;
+      right: 220px;           /* juega con top/left/right/bottom */
+      width: 160px;
+      padding: 10px;
+      border: 2px solid #a11;
+      background: #ffd6d6;
+    }
+
+    .pos-rel {
+      position: relative;
+      top: 20px;             /* mueve pero NO sale del flow */
+      left: 20px;
+      width: 180px;
+      padding: 10px;
+      border: 2px solid #b85;
+      background: #fff0d8;
+    }
+
+    /* =========================
+       4) FLOAT + CLEAR
+       ========================= */
+    .float-box {
+      float: left;            /* prueba right */
+      width: 180px;
+      height: 110px;
+      margin: 0 12px 12px 0;
+      border: 2px solid #2a7;
+      background: #dffdf0;
+      padding: 8px;
+    }
+
+    .clear-both {
+      clear: both;
+      border-top: 2px dashed #777;
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+
+    /* =========================
+       5) TEXT WRAP / OVERFLOW
+       ========================= */
+    .wrap-demo {
+      width: 280px;
+      border: 2px solid #555;
+      padding: 10px;
+      background: #f7f7f7;
+      /* prueba con/ sin estas líneas */
+      /* overflow-wrap: anywhere; */
+      /* word-wrap: break-word; */
+    }
+
+    /* =========================
+       6) VH (altura de pantalla)
+       ========================= */
+    .vh-demo {
+      height: 40vh;           /* prueba 100vh */
+      border: 2px solid #333;
+      background: #f0f0ff;
+      padding: 10px;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Laboratorio CSS 🧪</h1>
+    <p class="note">
+      Edita los valores en el &lt;style&gt; y recarga. Consejo: abre DevTools (F12) y mira el panel “Box Model”.
+    </p>
+
+    <h2>1) Box Model + box-sizing</h2>
+    <div class="panel box-row">
+      <div class="box contentBox">
+        <strong>content-box</strong><br>
+        width/height = SOLO contenido
+      </div>
+
+      <div class="box borderBox">
+        <strong>border-box</strong><br>
+        width/height = contenido+padding+border
+      </div>
+    </div>
+    <p class="note">Juega con <code>padding</code>, <code>border</code> y <code>width</code> y mira cómo cambia el tamaño total.</p>
+
+    <h2>2) Inline vs Block</h2>
+    <div class="panel inline-demo">
+      Texto antes
+      <span>SPAN 1</span>
+      <span>SPAN 2</span>
+      Texto después
+      <p class="note">Prueba poner <code>display: inline-block</code> en los <code>span</code>.</p>
+    </div>
+
+    <div class="panel block-demo">
+      <div>DIV 1 (block)</div>
+      <div>DIV 2 (block)</div>
+      <p class="note">Prueba poner <code>display: inline</code> en los <code>div</code> (verás el caos controlado).</p>
+    </div>
+
+    <h2>3) Position: relative vs absolute</h2>
+    <div class="panel pos-parent">
+      <div class="pos-rel">Soy <strong>relative</strong> (me muevo pero dejo hueco).</div>
+      <div class="pos-abs">Soy <strong>absolute</strong> (salgo del flow).</div>
+      <p class="note">Quita <code>position: relative</code> del padre y mira a dónde se va el absolute 👀</p>
+    </div>
+
+    <h2>4) Float + Clear</h2>
+    <div class="panel">
+      <div class="float-box">Caja flotada (float)</div>
+      <p>
+        Este texto rodea la caja flotada. Cambia <code>float: left</code> por <code>right</code> y verás cómo se recoloca.
+        Si el contenedor “colapsa”, es porque el float sale del flow.
+      </p>
+      <div class="clear-both">
+        Yo tengo <code>clear: both</code>, así que bajo por debajo del flotado.
+      </div>
+    </div>
+
+    <h2>5) Palabra infinita (wrap / overflow-wrap)</h2>
+    <div class="panel">
+      <div class="wrap-demo">
+        Palabra asesina:
+        <strong>Holaholaholaholaholaholaholaholaholaholaholaholaholahola</strong>
+      </div>
+      <p class="note">Activa/desactiva <code>overflow-wrap</code> y <code>word-wrap</code> en <code>.wrap-demo</code>.</p>
+    </div>
+
+    <h2>6) VH (altura de la pantalla)</h2>
+    <div class="vh-demo">
+      Este bloque mide <strong>40vh</strong> (40% de la altura visible).<br>
+      Prueba <strong>100vh</strong> para estilo “landing page”.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY — MISMO QUE MENU.CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f4ed;
+    color: #3b2f2f;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    background-color: #8b6f47;
+    padding: 1rem 0;
+}
+
+.header-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 60px;
+}
+
+/* NAV */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SUBMENU */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8b6f47;
+    display: none;
+    min-width: 180px;
+    border-radius: 0 0 6px 6px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-weight: normal;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* MAIN — IDÉNTICO A MENU */
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 900px;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLES */
+main h2 {
+    margin-bottom: 1rem;
+}
+
+main p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* SECTION HEADER */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header p {
+    opacity: 0.8;
+}
+
+/* PROMO GRID — REUTILIZADO */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* PROMO CARD — MISMO ESTILO QUE MENU */
+.promo-card {
+    background-color: #f9f4ed;
+    padding: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card h3 {
+    margin-bottom: 0.5rem;
+    color: #8b6f47;
+}
+
+.promo-card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #3b2f2f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.promo-card strong {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #8b6f47;
+}
+
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+
+    margin: 0 auto 2.5rem auto; /* centrado */
+    overflow: hidden;
+
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000; /* evita flashes blancos */
+}
+
+/* IMAGE */
+.slider img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;   /* CLAVE: no deforma ni cambia layout */
+    object-position: center;
+
+    transition: opacity 0.6s ease-in-out;
+    border-radius: 18px;
+}
+@media (max-width: 768px) {
+    .slider {
+        height: 220px;
+    }
+}

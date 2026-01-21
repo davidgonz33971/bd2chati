@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact | Riveiro’s Coffee</title>
+
+    <link rel="stylesheet" href="../css/contact.css" />
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../assets/riveros.png" alt="Riveiro’s logo">
+            </a>
+            <h1>Riveiro’s Coffee</h1>
+            
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+
+                <li>
+                    <a href="menu.html">Menu</a>
+                    <ul class="submenu">
+                        <li><a href="bakery.html">Bakery</a></li>
+                        <li><a href="drinks.html">Drinks</a></li>
+                        <li><a href="quick-bites.html">Quick-bites</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main class="page">
+    <h2 class="page-title">Contact</h2>
+
+    <section class="layout">
+        <aside class="card info">
+            <h3>Coffee Shop Information</h3>
+
+            <div class="info-row">
+                <span class="label">Address</span>
+                <span class="value">Main Street 123, Viseu, Portugal</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Opening Hours</span>
+                <span class="value">Mon–Sun: 12:00 – 23:30</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Phone</span>
+                <span class="value">+351 000 000 000</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Email</span>
+                <span class="value">contact@riveiros.com</span>
+            </div>
+
+            <div class="info-extra">
+                <p class="hint">Thinking of visiting us? Book a table and we’ll save the best spot for you 😏</p>
+                <a class="btn small" href="reservation.html">Go to Reservation</a>
+            </div>
+        </aside>
+
+        <section class="card react-zone">
+            <div id="react-root"></div>
+        </section>
+    </section>
+</main>
+
+<footer class="footer">
+    <p id="datetime"></p>
+    <p>© 2025 Riveiro’s</p>
+</footer>
+
+<script>
+    function updateDateTime() {
+        const el = document.getElementById("datetime");
+        el.textContent = new Date().toLocaleString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+<script type="text/babel" src="../js/contact.js"></script>
+
+</body>
+</html>

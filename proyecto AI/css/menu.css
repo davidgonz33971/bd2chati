@@ -1,0 +1,182 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f4ed;
+    color: #3b2f2f;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    background-color: #8b6f47;
+    padding: 1rem 0;
+}
+
+.header-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 60px;
+}
+
+/* NAV */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SUBMENU */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8b6f47;
+    display: none;
+    min-width: 180px;
+    border-radius: 0 0 6px 6px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-weight: normal;
+}
+
+/* Hover */
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* PAGE */
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 900px;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLES */
+main h2 {
+    margin-bottom: 1rem;
+}
+
+main p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* SECTION */
+section h3 {
+    margin-bottom: 1rem;
+}
+
+section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+section li {
+    margin-bottom: 0.6rem;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #3b2f2f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* PROMO GRID */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* PROMO CARD */
+.promo-card {
+    background-color: #f9f4ed;
+    padding: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.promo-card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.promo-card strong {
+    font-size: 1.1rem;
+    color: #8b6f47;
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #8b6f47;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* HIGHLIGHT CARD */
+.promo-card.highlight {
+    background-color: #fff3e0;
+    border: 2px solid #8b6f47;
+}
